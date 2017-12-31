@@ -13,14 +13,20 @@ function start() {
     switch (request.url) { // switch rozróżniający zapytania
         case '/':
         case '/start':
-            handlers.welcome(request, response);
-            break;
+          handlers.welcome(request, response);
+          break;
         case '/upload':
-            handlers.upload(request, response);
-            break;
-            case '/show':
-            handlers.show(request, response);
-            break;
+          handlers.upload(request, response);
+          break;
+        case '/show':
+          handlers.show(request, response);
+        break;
+        case '/cssstart':
+          handlers.cssstart(request,response);
+        break;
+        case '/cssupload':
+          handlers.cssupload(request,response);
+        break;
         default:
             handlers.error(request, response);
     }
