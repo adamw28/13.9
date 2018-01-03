@@ -10,7 +10,8 @@ function start() {
 
     response.writeHead(200, {"Content-Type": "text/plain; charset=utf-8"});
 
-    switch (request.url) { // switch rozróżniający zapytania
+    let url=require('url').parse(request.url,true);
+    switch(url.pathname) { // switch rozróżniający zapytania
         case '/':
         case '/start':
           handlers.welcome(request, response);
